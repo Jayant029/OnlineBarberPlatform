@@ -1,0 +1,91 @@
+.featured {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  background-size: cover; /* Adjust as needed */
+  background-repeat: no-repeat;
+  background-image: url("../../../public/photo70.jpg");
+  
+  .container {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h1{
+        font-size: 50px;
+        border: solid black;
+        background-color: black;
+        border-radius: 20px;
+        color: white;
+        padding: 5px;
+      }
+
+      .search {
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+
+        .searchInput {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          img {
+            width: 10px;
+            height: 25px;
+            margin: 30px;
+          }
+
+          input {
+            border: none;
+            padding-top: 20px;
+            outline: none;
+
+            &::placeholder {
+              color: black;
+            }
+          }
+        }
+
+        button {
+          width: 120px;
+          border-radius: 0px;
+          height: 60px;
+          background-color: black;
+          color: white;
+          align-self: flex-start;
+          cursor: pointer;
+        }
+      }
+
+      .popular {
+        display: flex;
+        color: white;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          width: max-content;
+        }
+
+        button {
+          width: max-content;
+          color: white;
+          border: 1px solid white;
+          padding: 5px 10px;
+          border-radius: 20px;
+          background-color: black;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

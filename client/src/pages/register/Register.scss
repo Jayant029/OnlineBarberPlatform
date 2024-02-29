@@ -1,0 +1,188 @@
+/* Register.scss */
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../../public/photo71.jpg");
+  background-size: cover; /* Adjust as needed */
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.form-container {
+  max-width: 400px;
+  width: 90%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.registration-message {
+  color: #4caf50;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.register-button {
+  padding: 10px 80px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: darkgreen;
+}
+
+/* Popup styles */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+.popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.close-button {
+  background: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.close-button:hover {
+  background: #45a049;
+}
+
+/* Add the following styles to your Register.scss or a separate CSS file */
+
+/* Styling for the select element */
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Styling for the options within the select element */
+select option {
+  font-size: 16px;
+}
+
+/* Optional: Add some styling to make the dropdown arrow more visible */
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('down.png') no-repeat right center;
+  background-size: 20px; /* Adjust the size according to your needs */
+}

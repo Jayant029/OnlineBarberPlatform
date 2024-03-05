@@ -4,11 +4,11 @@
   justify-content: center;
   background-size: cover; /* Adjust as needed */
   background-repeat: no-repeat;
-  background-image: url("../../../public/photo70.jpg");
+  background-image: url("../../../public/bg.jpg");
   
   .container {
-    width: 800px;
-    height: 800px;
+    width: 50vw;
+    height: 120vh;
     display: flex;
     align-items: center;
 
@@ -68,7 +68,7 @@
 
       .popular {
         display: flex;
-        color: white;
+        color: rgb(0, 0, 0);
         align-items: center;
         gap: 10px;
 

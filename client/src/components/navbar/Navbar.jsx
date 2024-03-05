@@ -2,41 +2,15 @@ import React, { useEffect, useState, useRef } from "react";
   import { Link, useLocation, useNavigate } from "react-router-dom";
   import newRequest from "../../utils/newRequest";
   import "./Navbar.scss";
-  import logoImage from '../../../public/logo.png';
+  import logoImage from '../../../public/blacklogo.png';
 
 
   function Navbar() {
     const [active, setActive] = useState(false);
     const [open, setOpen] = useState(false);
     const accountBtnRef = useRef(null);
-    const buttonRef = useRef(null);  // <-- Add this line
   
     const { pathname } = useLocation();
-  
-    const isActive = () => {
-      window.scrollY > 0 ? setActive(true) : setActive(false);
-    };
-  
-    useEffect(() => {
-      window.addEventListener("scroll", isActive);
-      document.addEventListener("click", handleOutsideClick);
-  
-      return () => {
-        window.removeEventListener("scroll", isActive);
-        document.removeEventListener("click", handleOutsideClick);
-      };
-    }, []);
-  
-    const handleOutsideClick = (e) => {
-      if (accountBtnRef.current && !accountBtnRef.current.contains(e.target)) {
-        setOpen(false);
-      }
-      // Check if the clicked element is outside the button and its options
-      if (buttonRef.current && !buttonRef.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-  
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const navigate = useNavigate();
   
@@ -53,11 +27,14 @@ import React, { useEffect, useState, useRef } from "react";
     return (
       <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
         <div className="container">
+        <Link className="link" to="/">
         <div className="logo">
-            <Link className="link" to="/">
-              <img src={logoImage} alt="Logo" className="logo-image" />
-            </Link>
+          <img src={logoImage} alt="Logo" className="logo-image" />
+          <div className="logo-text">
+            <h1>ONLINE BARBER PLATFORM</h1>
           </div>
+        </div>
+      </Link>
           <div className="links">
           {currentUser?.isSeller && (
             <Link className="link" to="/services">
@@ -114,29 +91,11 @@ import React, { useEffect, useState, useRef } from "react";
                   </div>
                 )}
               </div>
-            ) : (<div className="account-btn" onClick={() => setOpen(!open)} ref={accountBtnRef}>
-                <button className="link" onClick={() => setOpen(!open)}>
-                  Account
-                </button>
-                {open && (
-                  <div className="options1">
-                  <Link
-                    className="link"
-                    to="/login"
-                    onClick={() => setOpen(false)} // Close dropdown on click
-                  >
-                    Sign in
-                  </Link>
-                  <Link
-                    className="link"
-                    to="/register"
-                    onClick={() => setOpen(false)} // Close dropdown on click
-                  >
-                    Sign up
-                  </Link>
-                </div>
-                )}
-              </div>
+            ) : (<div className="account-btn">
+              <button><Link className="link" to="/login">
+              Sign In
+            </Link></button>
+          </div>
             )}
           </div>
         </div>

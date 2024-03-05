@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.scss";
 import newRequest from "../../utils/newRequest";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -58,6 +58,9 @@ function Login() {
         />
         <button className="login-button">Login</button>
         {error && <p className="error-message">{error}</p>}
+        <p>
+          Don't have an account? <Link to="/register">Sign up</Link>
+        </p>
       </form>
     </div>
   );

@@ -3,7 +3,6 @@ import upload from "../../utils/upload";
 import "./Register.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
-//import countriesList from "../../utils/countriesList";
 
 function Register() {
   const [file, setFile] = useState(null);
@@ -17,14 +16,30 @@ function Register() {
     phone: "",
   });
   const [registrationComplete, setRegistrationComplete] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
   const navigate = useNavigate();
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const validatePhoneNumber = (phoneNumber) => {
+    // You can use a more sophisticated validation logic here
+    const regex = /^\+?\d{1,4}?\s?\d{1,15}$/;
+    return regex.test(phoneNumber);
+  };
 
   const handleChange = (e) => {
     setUser((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
+
+    // Clear previous error messages when the user starts typing
+    setEmailError("");
+    setPhoneError("");
   };
-  
 
   const handleSeller = (e) => {
     setUser((prev) => {
@@ -34,6 +49,17 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate email and phone number
+    if (!validateEmail(user.email)) {
+      setEmailError("Invalid email format");
+      return;
+    }
+
+    if (!validatePhoneNumber(user.phone)) {
+      setPhoneError("Invalid phone number format");
+      return;
+    }
 
     const url = await upload(file);
     try {
@@ -66,34 +92,31 @@ function Register() {
             <input
               name="username"
               type="text"
-              placeholder="xyz"
+              placeholder="John Doe"
               onChange={handleChange}
-            required/>
+              required
+            />
 
             <label htmlFor="email">Email</label>
             <input
               name="email"
               type="email"
-              placeholder="xyz@gmail.com"
+              placeholder="Johndoe@gmail.com"
               onChange={handleChange}
-            required/>
+              required
+            />
+            {emailError && <p className="error-message">{emailError}</p>}
 
             <label htmlFor="password">Password</label>
-            <input name="password" type="password" onChange={handleChange} required/>
+            <input
+              name="password"
+              type="password"
+              onChange={handleChange}
+              required
+            />
             <label htmlFor="file">Profile Picture</label>
             <input type="file" onChange={(e) => setFile(e.target.files[0])} />
 
-            {/* <label htmlFor="country">Country</label> */}
-            {/* Use a select element for the country dropdown */}
-            {/* <select name="country" onChange={handleChange} value={user.country} required>
-              <option value="">Select Country</option>
-              {countriesList.map((country) => (
-                <option key={country.code} value={country.name}>
-                  {country.name}
-                </option>
-              ))}
-            </select> */}
-            
             <div className="form-group">
               <div className="toggle">
                 <label htmlFor="seller">Activate the Barber account</label>
@@ -109,7 +132,9 @@ function Register() {
                 type="text"
                 placeholder="+91 123 456 7890"
                 onChange={handleChange}
-              required/>
+                required
+              />
+              {phoneError && <p className="error-message">{phoneError}</p>}
 
               <div className="button-container">
                 <button className="register-button">Register</button>

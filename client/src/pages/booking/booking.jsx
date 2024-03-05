@@ -4,6 +4,7 @@ import './booking.scss';
 import getCurrentUser from '../../utils/getCurrentUser';
 import newRequest from '../../utils/newRequest';
 
+
 const Booking = () => {
   const currentUser = getCurrentUser();
   const { gigId } = useParams();

@@ -1,28 +1,9 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  text-decoration: none; 
-  align-items: center;
-  background-image: url("../../../public/navback.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  color: white;
+  color: rgb(0, 0, 0);
   position: sticky;
-  top: 0px;
-  z-index: 999;
-  // transition: 0.5s all ease;
-
-  // &.active {
-  //   background-color: grey;
-  //   color: black;
-
-  //   button {
-  //     background-color: black !important;
-  //     color: white !important;
-  //     border: 1px solid white !important;
-  //   }
-  // }
+  background-color: #e3e8aa;
 
   .container {
     width: 1420px;
@@ -31,18 +12,27 @@
     justify-content: space-between;
     padding: 0px 0px;
 
+    .link:hover {
+      text-decoration: none;
+    }
+
     .logo {
-      .logo-image {
-        width: 60px; 
-        height: auto; 
-      }
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-text {
+      margin-left: 10px; /* Adjust the margin as needed */
+    }
+    
+    .logo-image {
+      width: 60px;
+      height: auto;
     }
 
     .h1{
       align-items: center;
     }
-
-    
 
     .links {
       display: flex; 
@@ -70,65 +60,57 @@
         }
 
         .options {
-          background-image: url("../../../public/navbox.jpg");
-          background-size: cover;
-          background-position: center center;
-          background-repeat: no-repeat;
           position: absolute;
           top: 50px;
-          right: 0;
-          padding: 20px;
-          background-color: black;
+          right: 0px;
+          padding: 10px;
+          background-color: #000000;
           border-radius: 10px;
           z-index: 999;
-          border: 1px solid white;
+          border: 1px solid rgb(0, 0, 0);
           display: flex;
           flex-direction: column;
           gap: 10px;
           width: 200px;
           font-weight: 300;
-          color: white;
+          color: rgb(255, 255, 255);
         }
-        
+
         .account-btn {
           position: relative;
         }
       }
 
-      .options1{
-        background-image: url("../../../public/navback.jpg");
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        position: absolute;
-        text-align: center;
-        top: 60px;
-        right: 10px;
-        padding: 6px;
-        background-color: black;
-        border-radius: 10px;
-        border: 1px solid white;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 90px;
-        font-weight: 500;
-        color: white;
-      }
+      // .options1{
+      //   position: absolute;
+      //   text-align: center;
+      //   top: 62px;
+      //   right: 17px;
+      //   padding: 6px;
+      //   background-color: #e3e8aa;
+      //   border-radius: 10px;
+      //   border: 1px solid rgb(0, 0, 0);
+      //   display: flex;
+      //   flex-direction: column;
+      //   gap: 10px;
+      //   width: 90px;
+      //   font-weight: 500;
+      //   color: rgb(0, 0, 0);
+      // }
 
       button {
-        color: white;
+        color: rgb(255, 255, 255);
         padding: 8px 20px;
         border-radius: 5px;
-        border: 1px solid white;
-        background-color: transparent;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: black;
         cursor: pointer;
 
-        &:hover {
-          background-color: white;
-          border-color: black;
-          color: black;
-        }
+        // &:hover {
+        //   background-color: rgb(255, 255, 255);
+        //   border-color: rgb(0, 0, 0);
+        //   color: rgb(0, 0, 0);
+        // }
       }
     }
   }

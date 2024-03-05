@@ -2,10 +2,10 @@
 
 .register {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
-  height: 100vh;
-  background-image: url("../../../public/photo71.jpg");
+  height: 80vh;
+  background-image: url("../../../public/bg-1.jpg");
   background-size: cover; /* Adjust as needed */
   background-repeat: no-repeat;
   background-position: center; 
@@ -156,33 +156,33 @@ input:checked + .slider:before {
   background: #45a049;
 }
 
-/* Add the following styles to your Register.scss or a separate CSS file */
+// /* Add the following styles to your Register.scss or a separate CSS file */
 
-/* Styling for the select element */
-select {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-}
+// /* Styling for the select element */
+// select {
+//   width: 100%;
+//   padding: 10px;
+//   font-size: 16px;
+//   margin-bottom: 15px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   background-color: #fff;
+// }
 
-/* Styling for the options within the select element */
-select option {
-  font-size: 16px;
-}
+// /* Styling for the options within the select element */
+// select option {
+//   font-size: 16px;
+// }
 
-/* Optional: Add some styling to make the dropdown arrow more visible */
-select::-ms-expand {
-  display: none;
-}
+// /* Optional: Add some styling to make the dropdown arrow more visible */
+// select::-ms-expand {
+//   display: none;
+// }
 
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: url('down.png') no-repeat right center;
-  background-size: 20px; /* Adjust the size according to your needs */
-}
+// select {
+//   appearance: none;
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   background: url('down.png') no-repeat right center;
+//   background-size: 20px; /* Adjust the size according to your needs */
+// }

@@ -5,7 +5,7 @@ import TrustedBy from "../../components/trustedBy/TrustedBy";
 import coursecontent from "../../../public/coursecontent.gif";
 import site from "../../../public/sitemap1.gif";
 import tick from '../../../public/tick.jpg';
-import Slide from "../../components/slide/Slide";
+//import Slide from "../../components/slide/Slide";
 import CatCard from "../../components/catCard/CatCard";
 import ProjectCard from "../../components/projectCard/ProjectCard";
 import { cards, projects } from "../../data";
@@ -15,11 +15,11 @@ function Home() {
     <div className="home">
       <Featured />
       {/* <TrustedBy /> */}
-      <Slide slidesToShow={4} arrowsScroll={4}>
+      {/* <Slide slidesToShow={4} arrowsScroll={4}>
         {projects.map((card) => (
           <ProjectCard key={card.id} card={card} />
         ))}
-      </Slide>
+      </Slide> */}
       <div className='features'>
          <div className='container'>
             <div className='item'>
@@ -122,11 +122,11 @@ function Home() {
         </div>
       </div> */}
       
-      <Slide slidesToShow={5} arrowsScroll={5}>
+      {/* <Slide slidesToShow={5} arrowsScroll={5}>
         {cards.map((card) => (
           <CatCard key={card.id} card={card} />
         ))}
-      </Slide>
+      </Slide> */}
     </div>
   );
 }

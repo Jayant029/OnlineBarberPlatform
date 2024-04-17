@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGO_DB, {
     process.exit(1); // Exit the application if MongoDB connection fails
   });
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: "https://client-frontend-one.vercel.app/", credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
